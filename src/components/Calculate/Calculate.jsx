@@ -178,7 +178,7 @@ export const Calculate = () => {
         setNumber1(parsMu);
         setArr(prev => [...prev, `${historyString} + '%' + ' = ' + ${parsMu}`]);
         break;
-      
+
       case '/':
         const parsD = Number(number1) / (Number(number2) / 100);
         setSum(true);
@@ -193,7 +193,19 @@ export const Calculate = () => {
 
   const handleSqrt = () => {
     const historyString = `${number1}${znak}${number2}`;
+
+    if (znak.length > 0 && sum === false) {
+      setNumber2(Math.sqrt(Number(number2)));
+      setArr(prev => [
+        ...prev,
+        '√' + number2 + ' = ' + Math.sqrt(Number(number1)),
+      ]);
+
+      return;
+    }
+
     setNumber1(Math.sqrt(Number(number1)));
+
     setArr(prev => [
       ...prev,
       '√' + historyString + ' = ' + Math.sqrt(Number(number1)),
@@ -201,6 +213,10 @@ export const Calculate = () => {
   };
 
   const handleClick = num => {
+    if ((number1 === '0' && num === 0) || (number2 === '0' && num === 0)) {
+      return;
+    }
+
     return znak.length === 0
       ? setNumber1(prev => prev + `${num}`)
       : setNumber2(prev => prev + `${num}`);
@@ -249,7 +265,7 @@ export const Calculate = () => {
       <div>
         {' '}
         <CalculateWindow value={value}>
-          {number1.length === 0 ? (
+          {number1.length === 0 && znak.length === 0 ? (
             <p>0</p>
           ) : (
             <p>{sum ? number1 : `${number1}${znak}${number2}`}</p>
