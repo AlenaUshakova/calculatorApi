@@ -14,6 +14,7 @@ export const CalculateWindow = styled.div`
   display: flex;
   padding: 10px;
   width: 100%;
+
   p {
     margin: 0;
     margin-left: auto;
@@ -27,16 +28,16 @@ export const BtnContainer = styled.ul`
   margin: 0;
   padding: 20px 10px;
   width: 100%;
+  gap: 4px;
 
   @media screen and (min-width: 480px) {
     gap: 4px;
+    padding: 20px 10px;
   }
-
   @media screen and (min-width: 768px) {
     gap: 35px;
     padding: 40px 40px;
   }
-
   @media screen and (min-width: 1200px) {
     gap: 40px;
   }
@@ -46,6 +47,7 @@ export const BtnIten = styled.li`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-basis: calc((100% - 16px) / 5);
 
   @media screen and (min-width: 480px) {
     flex-basis: calc((100% - 16px) / 5);
@@ -67,5 +69,9 @@ export const CalculateContainer = styled.div`
 `;
 
 export const ByMe = styled.p`
+  @media screen and (max-width: 479px) {
+    display: none;
+  }
+  
   font-size: 15px;
 `;

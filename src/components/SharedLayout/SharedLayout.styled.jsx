@@ -21,7 +21,7 @@ export const Container = styled.div`
 
   @media screen and (min-width: 320px) {
     width: 320px;
-    font-size: 12px;
+    font-size: 10px;
   }
   @media screen and (min-width: 480px) {
     width: 480px;

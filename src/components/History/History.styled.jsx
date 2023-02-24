@@ -3,7 +3,11 @@ import styled from 'styled-components';
 export const HistoryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  border-left: ${props => {
+  width: 290px;
+  padding: 10px 0 10px 10px;
+  overflow: hidden;
+
+  border-top: ${props => {
     switch (props.value) {
       case 'dr':
         return '2px solid #b4b6b8';
@@ -13,27 +17,26 @@ export const HistoryContainer = styled.div`
         return '2px solid #4d4a4a';
     }
   }};
-  padding: 10px 0 10px 10px;
 
-  button {
-    display: inline-flex;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    justify-content: end;
-    margin-top: auto;
-  }
-
-  @media screen and (min-width: 320px) {
-    width: 100px;
-  }
   @media screen and (min-width: 480px) {
     width: 500px;
+    overflow: visible;
+    border-top: none;
+    border-left: ${props => {
+      switch (props.value) {
+        case 'dr':
+          return '2px solid #b4b6b8';
+        case 'cl':
+          return '2px solid #792608';
+        default:
+          return '2px solid #4d4a4a';
+      }
+    }};
   }
 `;
 
 export const HistoryTitle = styled.p`
-  margin: 0;
+  margin: 0 0 20px 0;
   text-align: center;
   font-size: medium;
   text-decoration: underline;
@@ -45,7 +48,8 @@ export const HistoryTitle = styled.p`
 
 export const HistoryText = styled.p`
   font-size: small;
-  
+  margin: 0 0 20px 0;
+
   @media screen and (min-width: 768px) {
     font-size: medium;
   }
@@ -56,7 +60,7 @@ export const HistoryText = styled.p`
 
 export const HistoryTextCont = styled.div`
   overflow-y: scroll;
-  
+
   &::-webkit-scrollbar {
     background-color: transparent;
     border-radius: 5px;

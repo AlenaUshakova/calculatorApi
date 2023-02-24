@@ -1,4 +1,4 @@
-import { HomeContainer } from './Home.styled';
+import { HomeContainer} from './Home.styled';
 import { Calculate } from 'components/Calculate/Calculate';
 import { History } from 'components/History/History';
 

@@ -9,10 +9,15 @@ export const LoadMore = styled.button`
   height: auto;
   margin: 0;
   border-radius: 10px;
+  font-size: small;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 500;
 
-  @media screen and (min-width: 480px) {
-    font-size: small;
-  }
   @media screen and (min-width: 768px) {
     height: 70px;
     font-size: x-large;
@@ -27,7 +32,8 @@ export const LoadMore = styled.button`
       default:
         return '#e6e8e9';
     }
-  }};
+}};
+  
   color: ${props => {
     switch (props.value) {
       case 'dr':
@@ -37,7 +43,8 @@ export const LoadMore = styled.button`
       default:
         return 'black';
     }
-  }};
+}};
+  
   border: ${props => {
     switch (props.value) {
       case 'dr':
@@ -48,14 +55,6 @@ export const LoadMore = styled.button`
         return '2px solid #b4b6b8';
     }
   }};
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: 24px;
-  font-style: normal;
-  font-weight: 500;
 
   transition: scale 250ms linear;
 
