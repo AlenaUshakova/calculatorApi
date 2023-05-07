@@ -11,6 +11,7 @@ import { Calc } from 'calc-js';
 import { useContext } from 'react';
 import { historyContext } from 'context/HistoryContext';
 import { themeContext } from 'context/ThemeContext';
+import {arrBtn} from '../../utils/buttonOptions'
 
 export const Calculate = () => {
   const [number1, setNumber1] = useState('');
@@ -237,28 +238,6 @@ export const Calculate = () => {
     }
   };
 
-  const arrBtn = [
-    'C',
-    7,
-    8,
-    9,
-    '*',
-    '-',
-    4,
-    5,
-    6,
-    '/',
-    '+',
-    1,
-    2,
-    3,
-    '=',
-    '.',
-    '%',
-    0,
-    '√',
-    'CE',
-  ];
 
   return (
     <CalculateContainer>
@@ -268,7 +247,9 @@ export const Calculate = () => {
           {number1.length === 0 && znak.length === 0 ? (
             <p>0</p>
           ) : (
-            <p>{sum ? number1 : `${number1}${znak}${number2}`}</p>
+            <p>
+              {sum ? number1 : `${number1}${znak}${number2}`.substring(0, 20)}
+            </p>
           )}
         </CalculateWindow>
         <BtnContainer>
